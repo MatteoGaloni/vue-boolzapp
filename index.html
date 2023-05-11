@@ -54,104 +54,21 @@
                 <!-- **************Messages Rows*********************** -->
                 <div id="msg-containers" class="flex-grow-1 p-2">
                     <!-- **************CHAT*********************** -->
-                    <div id="chat" class="d-flex justify-content-between">
+                    <div v-for="contact in contacts" id="chat" class="d-flex justify-content-between">
                         <div class="d-flex">
                             <div class="img-container p-1">
-                                <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
+                                <img class="rounded-img" :src="contact.avatar" alt="user">
                             </div>
                             <div class="d-flex flex-column ">
-                                <span class="p-1">Michele</span>
-                                <span class="p-1">Ultimo messaggio inviato</span>
+                                <span class="p-1">{{contact.name}}</span>
+                                <span class="p-1">{{contact.messages[1].message}}</span>
                             </div>
                         </div>
                         <div>
                             <span>12.00</span>
                         </div>
                     </div>
-                    <div id="chat" class="d-flex justify-content-between p-1">
-                        <div class="d-flex">
-                            <div class="img-container p-1">
-                                <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
-                            </div>
-                            <div class="d-flex flex-column ">
-                                <span class="p-1">Michele</span>
-                                <span class="p-1">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span>12.00</span>
-                        </div>
-                    </div>
-                    <div id="chat" class="d-flex justify-content-between p-1">
-                        <div class="d-flex">
-                            <div class="img-container p-1">
-                                <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
-                            </div>
-                            <div class="d-flex flex-column ">
-                                <span class="p-1">Michele</span>
-                                <span class="p-1">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span>12.00</span>
-                        </div>
-                    </div>
-                    <div id="chat" class="d-flex justify-content-between p-1">
-                        <div class="d-flex">
-                            <div class="img-container p-1">
-                                <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
-                            </div>
-                            <div class="d-flex flex-column ">
-                                <span class="p-1">Michele</span>
-                                <span class="p-1">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span>12.00</span>
-                        </div>
-                    </div>
-                    <div id="chat" class="d-flex justify-content-between p-1">
-                        <div class="d-flex">
-                            <div class="img-container p-1">
-                                <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
-                            </div>
-                            <div class="d-flex flex-column ">
-                                <span class="p-1">Michele</span>
-                                <span class="p-1">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span>12.00</span>
-                        </div>
-                    </div>
-                    <div id="chat" class="d-flex justify-content-between p-1">
-                        <div class="d-flex">
-                            <div class="img-container p-1">
-                                <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
-                            </div>
-                            <div class="d-flex flex-column ">
-                                <span class="p-1">Michele</span>
-                                <span class="p-1">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span>12.00</span>
-                        </div>
-                    </div>
-                    <div id="chat" class="d-flex justify-content-between p-1">
-                        <div class="d-flex">
-                            <div class="img-container p-1">
-                                <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
-                            </div>
-                            <div class="d-flex flex-column ">
-                                <span class="p-1">Michele</span>
-                                <span class="p-1">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div>
-                            <span>12.00</span>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
@@ -202,8 +119,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- *************************************** -->
 
 
     </div>
