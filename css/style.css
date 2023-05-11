@@ -39,7 +39,30 @@ body {
     flex-direction: column;
 }
 
+/* ************************************************ */
+
+
 #right-wrapper {
     background-color: rgb(192, 255, 230);
     flex-grow: 1;
+}
+
+
+#chat-container {
+    min-height: 400px;
+    background-color: burlywood;
+    padding: 2rem;
+}
+
+#messages-container {
+    max-width: 400px;
+    min-height: 300px;
+    background-color: darkkhaki;
+    margin: auto;
+    padding: 2rem;
+}
+
+.sent {
+    background-color: greenyellow;
+    width: 200px;
 }
