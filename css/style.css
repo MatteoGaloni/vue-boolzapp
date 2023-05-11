@@ -11,9 +11,19 @@ body {
 }
 
 /* ******************************* */
+.avatar-img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+
+
+
+/* ******************************* */
 .container {
     min-height: 700px;
 }
+
 
 #left-wrapper {
     width: 350px;
