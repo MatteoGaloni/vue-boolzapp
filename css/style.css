@@ -1,0 +1,26 @@
+/******** BASE **********/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: teal;
+}
+
+/* ******************************* */
+.container {
+    min-height: 700px;
+}
+
+#left-wrapper {
+    width: 200px;
+    background-color: pink;
+}
+
+#right-wrapper {
+    background-color: rgb(192, 255, 230);
+    flex-grow: 1;
+}
