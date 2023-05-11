@@ -11,13 +11,20 @@ body {
 }
 
 /* ******************************* */
-.avatar-img {
+.rounded-img {
     width: 60px;
     border-radius: 50%;
 }
 
-
-
+#rounded-icon {
+    background-color: white;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
 
 /* ******************************* */
 .container {

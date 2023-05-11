@@ -18,10 +18,10 @@
         <!-- ***********Left Container************************* -->
         <div id="left-wrapper">
             <!-- ****************First Row*********************** -->
-            <div id="first-row" class="d-flex justify-content-between p-1">
+            <div id="first-row" class="d-flex justify-content-between p-2">
                 <div class="d-flex align-items-center">
                     <div class="img-container p-1">
-                        <img class="avatar-img" src="./img/avatar_io.jpg" alt="user">
+                        <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
                     </div>
                     <span class="p-1">SOFIA</span>
                 </div>
@@ -32,25 +32,78 @@
                 </div>
             </div>
             <!-- ****************Second Row*********************** -->
-            <div id="second-row" class="d-flex justify-content-between p-1">
+            <div id="second-row" class="d-flex justify-content-between p-2">
                 <div class="d-flex align-items-center">
-                    <div class="img-container p-1">
-                        <img class="avatar-img" src="./img/avatar_io.jpg" alt="user">
+                    <div id="rounded-icon" class="p-1">
+                        <span><i class="fa-solid fa-bell-slash"></i></span>
                     </div>
-                    <span class="p-1">SOFIA</span>
-                </div>
-                <div class="d-flex align-items-center">
-                    <span class="p-1"><i class="fa-regular fa-circle" style="color: #878787;"></i></span>
-                    <span class="p-1"><i class="fa-solid fa-message"></i></span>
-                    <span class="p-1"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+                    <div class="d-flex flex-column ">
+                        <span class="p-1">Ricevi notifiche di nuovi messaggi</span>
+                        <span class="p-1">Attiva notifiche desktop</span>
+                    </div>
                 </div>
             </div>
+            <!-- **************Third Row*********************** -->
+            <div class="input-group mb-3 p-2">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                    aria-describedby="basic-addon1">
+            </div>
+            <!-- **************Messages Rows*********************** -->
+            <div id="msg-containers" class="flex-grow-1 p-2">
+                <!-- **************CHAT*********************** -->
+                <div id="chat" class="d-flex justify-content-between">
+                    <div class="d-flex">
+                        <div class="img-container p-1">
+                            <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
+                        </div>
+                        <div class="d-flex flex-column ">
+                            <span class="p-1">Michele</span>
+                            <span class="p-1">Ultimo messaggio inviato</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span>12.00</span>
+                    </div>
+                </div>
+                <div id="chat" class="d-flex justify-content-between p-1">
+                    <div class="d-flex">
+                        <div class="img-container p-1">
+                            <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
+                        </div>
+                        <div class="d-flex flex-column ">
+                            <span class="p-1">Michele</span>
+                            <span class="p-1">Ultimo messaggio inviato</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span>12.00</span>
+                    </div>
+                </div>
+                <div id="chat" class="d-flex justify-content-between p-1">
+                    <div class="d-flex">
+                        <div class="img-container p-1">
+                            <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
+                        </div>
+                        <div class="d-flex flex-column ">
+                            <span class="p-1">Michele</span>
+                            <span class="p-1">Ultimo messaggio inviato</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span>12.00</span>
+                    </div>
+                </div>
 
-            <div>
-                <input type="text">
+
+
+
+
+
             </div>
-            <div class="flex-grow-1">4</div>
         </div>
+
+
         <!-- ***********Right Container************************* -->
         <div id="right-wrapper">right</div>
     </div>
