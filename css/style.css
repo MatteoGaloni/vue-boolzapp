@@ -55,14 +55,22 @@ body {
 }
 
 #messages-container {
-    max-width: 400px;
-    min-height: 300px;
+    min-height: 450px;
     background-color: darkkhaki;
     margin: auto;
     padding: 2rem;
 }
 
+.sms {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 7px;
+}
+
 .sent {
-    background-color: greenyellow;
-    width: 200px;
+    background-color: green;
+}
+
+.received {
+    background-color: white;
 }
