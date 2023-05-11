@@ -16,8 +16,10 @@ body {
 }
 
 #left-wrapper {
-    width: 200px;
+    width: 350px;
     background-color: pink;
+    display: flex;
+    flex-direction: column;
 }
 
 #right-wrapper {
