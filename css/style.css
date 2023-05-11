@@ -28,7 +28,7 @@ body {
 
 /* ******************************* */
 .container {
-    min-height: 700px;
+    height: 700px;
 }
 
 
@@ -37,6 +37,11 @@ body {
     background-color: pink;
     display: flex;
     flex-direction: column;
+}
+
+
+#msg-containers {
+    overflow-y: auto;
 }
 
 /* ************************************************ */
@@ -52,6 +57,7 @@ body {
     min-height: 400px;
     background-color: burlywood;
     padding: 2rem;
+    overflow-y: scroll
 }
 
 #messages-container {
