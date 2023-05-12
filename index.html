@@ -48,28 +48,29 @@
                 <!-- **************Third Row*********************** -->
                 <div class="input-group p-2">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                        aria-label="Username" aria-describedby="basic-addon1">
+                    <input v-model="searchName" @keyup="filterName()" type="text" class="form-control"
+                        placeholder="Cerca o inizia una nuova chat" aria-label="Username"
+                        aria-describedby="basic-addon1">
                 </div>
                 <!-- **************Messages Rows*********************** -->
                 <div id="users-container" class="flex-grow-1 p-2">
                     <!-- **************left CHAT row*********************** -->
-                    <div @click="changeContact(index)" v-for="(contact, index) in contacts" id="chat"
-                        class="d-flex justify-content-between">
-                        <div class="d-flex">
-                            <div class="img-container p-1">
-                                <img class="rounded-img" :src="contact.avatar" alt="user">
+                    <div @click="changeContact(index)" v-for="(contact, index) in contacts" id="chat" class="">
+                        <div v-if="contact.visible" class="d-flex justify-content-between">
+                            <div class="d-flex">
+                                <div class="img-container p-1">
+                                    <img class="rounded-img" :src="contact.avatar" alt="user">
+                                </div>
+                                <div class="d-flex flex-column ">
+                                    <span class="p-1 strong">{{contact.name}}</span>
+                                    <span class="p-1 small grey">{{contact.messages[0].message}}</span>
+                                </div>
                             </div>
-                            <div class="d-flex flex-column ">
-                                <span class="p-1 strong">{{contact.name}}</span>
-                                <span class="p-1 small grey">{{contact.messages[0].message}}</span>
+                            <div>
+                                <span class="small grey">12:00</span>
                             </div>
-                        </div>
-                        <div>
-                            <span class="small grey">12:00</span>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -80,7 +81,7 @@
                 <div id="first-row-right" class="d-flex justify-content-between p-2">
                     <div class="d-flex align-items-center">
                         <div class="img-container p-1">
-                            <img class="rounded-img" src="./img/avatar_1.jpg" alt="user">
+                            <img class="rounded-img" :src="contacts[currentContact].avatar" alt="user">
                         </div>
                         <div class="d-flex flex-column ">
                             <span class="p-1">{{contacts[currentContact].name}}</span>
