@@ -4,7 +4,8 @@ createApp({
   data() {
     return {
       currentContact: 0,
-      lastMessge: 0,
+      lastMessage: 0,
+      newMessage: "",
 
       contacts: [
         {
@@ -177,15 +178,24 @@ createApp({
       console.log(index);
     },
 
-    // changeVisibleStatus(index) {
-    //   this.contacts[index].visible = !this.contacts[index].visible;
-    //   // this.btnStatus = "Da completare";
-    // },
+    addMessage() {
+      const data = {
+        date: "10/01/2020 16:15:22",
+        message: this.newMessage,
+        status: "sent",
+      };
+      this.contacts[this.currentContact].messages.push(data);
+      this.newMessage = "";
+      setTimeout(this.botMessage, 1000);
+    },
 
-    messagesArray(i) {
-      this.contacts.messages.forEach((element) => {
-        return console.log(element);
-      });
+    botMessage() {
+      const data = {
+        date: "10/01/2020 16:15:22",
+        message: "Bellaaa!",
+        status: "received",
+      };
+      this.contacts[this.currentContact].messages.push(data);
     },
   },
 }).mount("#app");

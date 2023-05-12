@@ -108,8 +108,8 @@
                     <div class="p-2">
                         <span><i class="fa-regular fa-face-smile"></i></span>
                     </div>
-                    <input v-model="contacts.name" type="text" class="form-control" placeholder="Scrivi un messaggio"
-                        aria-label="Username" aria-describedby="basic-addon1">
+                    <input v-model="newMessage" @keyup.enter="addMessage()" type="text" class="form-control"
+                        placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1">
                     <div class="p-2">
                         <span><i class="fa-solid fa-microphone"></i></span>
                     </div>
