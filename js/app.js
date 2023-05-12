@@ -4,6 +4,7 @@ createApp({
   data() {
     return {
       currentContact: 0,
+      lastMessge: 0,
 
       contacts: [
         {
