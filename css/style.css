@@ -7,7 +7,20 @@
 
 body {
     font-family: sans-serif;
-    background-color: teal;
+    background: linear-gradient(0deg, rgba(218, 219, 212, 1) 80%, rgba(0, 150, 136, 1) 80%);
+}
+
+/* ****************************ROOT COLOR************** */
+:root {
+    --main-color: rgb(234, 234, 234);
+}
+
+i {
+    color: grey;
+}
+
+.grey {
+    color: grey;
 }
 
 /* ******************************* */
@@ -29,40 +42,43 @@ body {
 /* ******************************* */
 .container {
     height: 700px;
+    background-color: var(--main-color);
 }
 
-
+/* *************Left Wrapper**************** */
 #left-wrapper {
     width: 350px;
-    background-color: pink;
     display: flex;
     flex-direction: column;
 }
 
+#second-row {
+    background-color: rgb(142, 218, 252);
+}
 
-#msg-containers {
+
+#users-container {
     overflow-y: auto;
+    background-color: white;
 }
 
 /* ************************************************ */
 
 
 #right-wrapper {
-    background-color: rgb(192, 255, 230);
     flex-grow: 1;
 }
 
 
 #chat-container {
     min-height: 400px;
-    background-color: burlywood;
+    background-color: beige;
     padding: 2rem;
     overflow-y: scroll
 }
 
 #messages-container {
     min-height: 450px;
-    background-color: darkkhaki;
     margin: auto;
     padding: 2rem;
 }
@@ -74,7 +90,7 @@ body {
 }
 
 .sent {
-    background-color: green;
+    background-color: rgb(213, 249, 186);
 }
 
 .received {
