@@ -101,14 +101,15 @@
                         <div id="message-wrapper" v-for="(mes, index) in contacts[currentContact].messages"
                             :class="mes.status == 'sent' ? 'justify-content-end' : 'justify-content-start' "
                             class="d-flex">
-                            <div @click="showOptions(index)" :class="mes.status == 'sent' ? 'sent' : 'received'"
-                                class="sms">
+                            <div :class="mes.status == 'sent' ? 'sent' : 'received'" class="sms">
                                 {{mes.message}}
+                                <span @click="showOptions(index)"><i
+                                        class="info_messages fa-solid fa-chevron-down"></i></span>
 
                                 <div v-if="classVisible && index == currentMessage"
                                     class="messageInfo d-flex flex-column">
-                                    <span>Message Info</span>
-                                    <span @click="deleteMessage(index)">Delete Message</span>
+                                    <span class="info_messages">Message Info</span>
+                                    <span class="info_messages" @click="deleteMessage(index)">Delete Message</span>
                                 </div>
                             </div>
                         </div>
