@@ -98,13 +98,15 @@
                 <!-- ****************Chat MEssagges Container*********************** -->
                 <div id="chat-container" class="flex-grow-1">
                     <div id="messages-container">
-                        <div id="message-wrapper" v-for="mes in contacts[currentContact].messages"
+                        <div id="message-wrapper" v-for="(mes, index) in contacts[currentContact].messages"
                             :class="mes.status == 'sent' ? 'justify-content-end' : 'justify-content-start' "
                             class="d-flex">
-                            <div :class="mes.status == 'sent' ? 'sent' : 'received'" class="sms">
+                            <div @click="showOptions(index)" :class="mes.status == 'sent' ? 'sent' : 'received'"
+                                class="sms">
                                 {{mes.message}}
 
-                                <div :class="classVisible" class="messageInfo d-flex flex-column">
+                                <div v-if="classVisible && index == currentMessage"
+                                    class="messageInfo d-flex flex-column">
                                     <span>Message Info</span>
                                     <span>Delete Message</span>
                                 </div>

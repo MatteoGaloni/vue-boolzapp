@@ -4,10 +4,11 @@ createApp({
   data() {
     return {
       currentContact: 0,
+      currentMessage: null,
       lastMessage: 0,
       newMessage: "",
       searchName: "",
-      classVisible: "d-block",
+      classVisible: false,
       user: {
         name: "Sofia",
         avatar: "./img/avatar_io.jpg",
@@ -226,7 +227,9 @@ createApp({
       console.log(contact.messages.length - 1);
     },
     showOptions(index) {
-      console.log(index);
+      this.currentMessage = index;
+      this.classVisible = !this.classVisible;
+      console.log(this.classVisible);
     },
 
     deleteTask(index) {
