@@ -14,18 +14,18 @@
 
 <body>
 
-    <div id="app">
+    <div class="p-3" id="app">
         <!-- ***********Create Main Container************************* -->
-        <div class="container d-flex mt-3">
+        <div class="container d-flex">
             <!-- ***********Left Container************************* -->
             <div id="left-wrapper">
                 <!-- ****************First Row*********************** -->
                 <div id="first-row" class="d-flex justify-content-between p-2">
                     <div class="d-flex align-items-center">
                         <div class="img-container p-1">
-                            <img class="rounded-img" src="./img/avatar_io.jpg" alt="user">
+                            <img class="rounded-img" :src="user.avatar" alt="user">
                         </div>
-                        <span class="p-1">Sofia</span>
+                        <span class="p-1">{{user.name}}</span>
                     </div>
                     <div class="d-flex align-items-center">
                         <span class="p-2"><i class="fa-regular fa-circle" style="color: #878787;"></i></span>
@@ -37,7 +37,7 @@
                 <div id="second-row" class="d-flex justify-content-between p-2">
                     <div class="d-flex align-items-center">
                         <div id="rounded-icon" class="p-1">
-                            <span><i class="fa-solid fa-bell-slash"></i></span>
+                            <span><i id="bell" class="fa-solid fa-bell-slash"></i></span>
                         </div>
                         <div class="d-flex flex-column ">
                             <span class="p-1">Ricevi notifiche di nuovi messaggi</span>
@@ -63,11 +63,12 @@
                                 </div>
                                 <div class="d-flex flex-column ">
                                     <span class="p-1 strong">{{contact.name}}</span>
-                                    <span class="p-1 small grey">{{contact.messages[0].message}}</span>
+                                    <span class="p-1 small grey">{{contact.messages[contact.messages.length -
+                                        1].message}}</span>
                                 </div>
                             </div>
                             <div>
-                                <span class="small grey">12:00</span>
+                                <span class="small grey">{{contact.messages[contact.messages.length - 1].date}}</span>
                             </div>
                         </div>
                     </div>
@@ -97,10 +98,17 @@
                 <!-- ****************Chat MEssagges Container*********************** -->
                 <div id="chat-container" class="flex-grow-1">
                     <div id="messages-container">
-                        <div v-for="mes in contacts[currentContact].messages"
+                        <div id="message-wrapper" v-for="mes in contacts[currentContact].messages"
                             :class="mes.status == 'sent' ? 'justify-content-end' : 'justify-content-start' "
                             class="d-flex">
-                            <div :class="mes.status == 'sent' ? 'sent' : 'received'" class="sms">{{mes.message}}</div>
+                            <div :class="mes.status == 'sent' ? 'sent' : 'received'" class="sms">
+                                {{mes.message}}
+
+                                <div :class="classVisible" class="messageInfo d-flex flex-column">
+                                    <span>Message Info</span>
+                                    <span>Delete Message</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,6 +131,7 @@
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./js/app.js"></script>
+    <!-- <script src="./js/moment.js"></script> -->
 </body>
 
 </html>

@@ -7,6 +7,11 @@ createApp({
       lastMessage: 0,
       newMessage: "",
       searchName: "",
+      classVisible: "d-block",
+      user: {
+        name: "Sofia",
+        avatar: "./img/avatar_io.jpg",
+      },
 
       contacts: [
         {
@@ -176,7 +181,7 @@ createApp({
   methods: {
     changeContact(index) {
       this.currentContact = index;
-      console.log(index);
+      // console.log(index);
     },
 
     addMessage() {
@@ -212,6 +217,24 @@ createApp({
 
         return (contact.visible = false);
       });
+    },
+
+    returnLast(contact) {
+      // array.forEach(element => {
+      // });
+      // this.contacts.messages[].message
+      console.log(contact.messages.length - 1);
+    },
+    showOptions(index) {
+      console.log(index);
+    },
+
+    deleteTask(index) {
+      this.tasks.splice(index, 1);
+    },
+
+    getTime() {
+      console.log(moment().format("dddd"));
     },
   },
 }).mount("#app");
