@@ -232,8 +232,8 @@ createApp({
       console.log(this.classVisible);
     },
 
-    deleteTask(index) {
-      this.tasks.splice(index, 1);
+    deleteMessage(index) {
+      this.contacts[this.currentContact].messages.splice(index, 1);
     },
 
     getTime() {

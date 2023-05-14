@@ -108,7 +108,7 @@
                                 <div v-if="classVisible && index == currentMessage"
                                     class="messageInfo d-flex flex-column">
                                     <span>Message Info</span>
-                                    <span>Delete Message</span>
+                                    <span @click="deleteMessage(index)">Delete Message</span>
                                 </div>
                             </div>
                         </div>
