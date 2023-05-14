@@ -48,9 +48,10 @@ i {
 
 /* *************Left Wrapper**************** */
 #left-wrapper {
-    width: 350px;
+    width: 30%;
     display: flex;
     flex-direction: column;
+    padding-bottom: 8px;
 }
 
 #second-row {
@@ -67,11 +68,21 @@ i {
     background-color: white;
 }
 
+#chat {
+    border-bottom: solid 1px;
+    border-color: lightgray;
+}
+
+#chat:hover {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
 /* ************************************************ */
 
 
 #right-wrapper {
-    flex-grow: 1;
+    width: 70%;
 }
 
 
@@ -103,16 +114,19 @@ i {
 .received {
     background-color: white;
 
+
 }
 
 
 .messageInfo {
+    border: solid 1px;
+    border-color: lightgray;
     background-color: white;
     justify-content: space-evenly;
     position: absolute;
     padding: 1rem;
     z-index: 1;
-    left: 30%;
+    right: 10%;
     width: 150px;
     border-radius: 2px;
 }

@@ -101,7 +101,7 @@
                         <div id="message-wrapper" v-for="(mes, index) in contacts[currentContact].messages"
                             :class="mes.status == 'sent' ? 'justify-content-end' : 'justify-content-start' "
                             class="d-flex">
-                            <div :class="mes.status == 'sent' ? 'sent' : 'received'" class="sms">
+                            <div :class="mes.status == 'sent' ? 'sent' : 'received'" class="sms text-break">
                                 {{mes.message}}
                                 <span @click="showOptions(index)"><i
                                         class="info_messages fa-solid fa-chevron-down"></i></span>
@@ -120,7 +120,7 @@
                     <div class="p-2">
                         <span><i class="fa-regular fa-face-smile"></i></span>
                     </div>
-                    <input v-model="newMessage" @keyup.enter="addMessage()" type="text" class="form-control"
+                    <input id="input" v-model="newMessage" @keyup.enter="addMessage()" type="text" class="form-control"
                         placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1">
                     <div class="p-2">
                         <span><i class="fa-solid fa-microphone"></i></span>
