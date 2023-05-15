@@ -1,7 +1,3 @@
-// const element = document.getElementById("message-wrapper");
-// let x = element.scrollHeight;
-// element.scrollTop = 2000;
-// console.log(x);
 const { createApp } = Vue;
 
 createApp({
@@ -186,7 +182,8 @@ createApp({
   methods: {
     changeContact(index, contact) {
       this.currentContact = index;
-      // console.log(index);
+      lastMessage = contact.messages[contact.messages.length - 1];
+      console.log(lastMessage);
     },
 
     addMessage() {
