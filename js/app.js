@@ -1,3 +1,7 @@
+// const element = document.getElementById("message-wrapper");
+// let x = element.scrollHeight;
+// element.scrollTop = 2000;
+// console.log(x);
 const { createApp } = Vue;
 
 createApp({
@@ -180,14 +184,14 @@ createApp({
     };
   },
   methods: {
-    changeContact(index) {
+    changeContact(index, contact) {
       this.currentContact = index;
       // console.log(index);
     },
 
     addMessage() {
       const data = {
-        date: "10/01/2020 16:15:22",
+        date: "07/03/1988 00:00:42",
         message: this.newMessage,
         status: "sent",
       };
@@ -220,12 +224,13 @@ createApp({
       });
     },
 
-    returnLast(contact) {
-      // array.forEach(element => {
-      // });
-      // this.contacts.messages[].message
-      console.log(contact.messages.length - 1);
-    },
+    // returnLast(contact) {
+    //   // array.forEach(element => {
+    //   // });
+    //   // this.contacts.messages[].message
+    //   this.lastMessage = contact.messages.length - 1;
+    //   return this.lastMessage;
+    // },
     showOptions(index) {
       this.currentMessage = index;
       this.classVisible = !this.classVisible;
@@ -234,10 +239,7 @@ createApp({
 
     deleteMessage(index) {
       this.contacts[this.currentContact].messages.splice(index, 1);
-    },
-
-    getTime() {
-      console.log(moment().format("dddd"));
+      this.classVisible = false;
     },
   },
 }).mount("#app");

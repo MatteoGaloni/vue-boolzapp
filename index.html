@@ -55,7 +55,7 @@
                 <!-- **************Messages Rows*********************** -->
                 <div id="users-container" class="flex-grow-1 p-2">
                     <!-- **************left CHAT row*********************** -->
-                    <div @click="changeContact(index)" v-for="(contact, index) in contacts" id="chat" class="">
+                    <div @click="changeContact(index, contact)" v-for="(contact, index) in contacts" id="chat" class="">
                         <div v-if="contact.visible" class="d-flex justify-content-between">
                             <div class="d-flex">
                                 <div class="img-container p-1">
@@ -134,7 +134,6 @@
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./js/app.js"></script>
-    <!-- <script src="./js/moment.js"></script> -->
-</body>
+
 
 </html>
