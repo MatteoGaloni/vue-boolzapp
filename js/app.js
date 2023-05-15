@@ -5,7 +5,7 @@ createApp({
     return {
       currentContact: 0,
       currentMessage: null,
-      lastMessage: 0,
+      // lastMessage: 0,
       newMessage: "",
       searchName: "",
       classVisible: false,
@@ -182,8 +182,8 @@ createApp({
   methods: {
     changeContact(index, contact) {
       this.currentContact = index;
-      lastMessage = contact.messages[contact.messages.length - 1];
-      console.log(lastMessage);
+      // lastMessage = contact.messages[contact.messages.length - 1];
+      // console.log(lastMessage);
     },
 
     addMessage() {

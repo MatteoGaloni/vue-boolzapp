@@ -86,7 +86,9 @@
                         </div>
                         <div class="d-flex flex-column ">
                             <span class="p-1">{{contacts[currentContact].name}}</span>
-                            <span class="p-1">{{contacts[currentContact].messages[lastMessage].date}}</span>
+                            <span
+                                class="p-1">{{contacts[currentContact].messages[contacts[currentContact].messages.length
+                                - 1].date}}</span>
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
