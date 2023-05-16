@@ -1,4 +1,4 @@
-/******** BASE **********/
+/********SETTINGS **********/
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +24,14 @@ i {
     color: grey;
 }
 
+/* ***********MAIN CONTAINER******************** */
+.container {
+    height: 650px;
+    background-color: var(--main-color);
+}
+
 /* ******************************* */
+
 .rounded-img {
     width: 60px;
     border-radius: 50%;
@@ -40,13 +47,8 @@ i {
     border-radius: 50%;
 }
 
-/* ******************************* */
-.container {
-    height: 650px;
-    background-color: var(--main-color);
-}
-
 /* *************Left Wrapper**************** */
+
 #left-wrapper {
     width: 30%;
     display: flex;
@@ -78,13 +80,11 @@ i {
     background-color: lightgray;
 }
 
-/* ************************************************ */
-
+/* ******************Right Wrapper****************************** */
 
 #right-wrapper {
     width: 70%;
 }
-
 
 #chat-container {
     min-height: 400px;
@@ -113,10 +113,7 @@ i {
 
 .received {
     background-color: white;
-
-
 }
-
 
 .messageInfo {
     border: solid 1px;

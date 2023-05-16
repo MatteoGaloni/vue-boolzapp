@@ -14,6 +14,7 @@
 
 <body>
 
+
     <div class="p-3" id="app">
         <!-- ***********Create Main Container************************* -->
         <div class="container d-flex">
@@ -54,8 +55,9 @@
                 </div>
                 <!-- **************Messages Rows*********************** -->
                 <div id="users-container" class="flex-grow-1 p-2">
+
                     <!-- **************left CHAT row*********************** -->
-                    <div @click="changeContact(index, contact)" v-for="(contact, index) in contacts" id="chat" class="">
+                    <div @click="changeContact(index)" v-for="(contact, index) in contacts" id="chat" class="">
                         <div v-if="contact.visible" class="d-flex justify-content-between">
                             <div class="d-flex">
                                 <div class="img-container p-1">
@@ -63,8 +65,7 @@
                                 </div>
                                 <div class="d-flex flex-column ">
                                     <span class="p-1 strong">{{contact.name}}</span>
-                                    <span class="p-1 small grey">{{contact.messages[contact.messages.length -
-                                        1].message}}</span>
+                                    <span class="p-1 small grey">{{getLastMessage(contact)}}</span>
                                 </div>
                             </div>
                             <div>
@@ -79,6 +80,7 @@
             <!-- ***********Right Container************************* -->
             <div id="right-wrapper" class="d-flex flex-column">
                 <!-- ****************First Row*********************** -->
+                <h1></h1>
                 <div id="first-row-right" class="d-flex justify-content-between p-2">
                     <div class="d-flex align-items-center">
                         <div class="img-container p-1">
@@ -88,7 +90,8 @@
                             <span class="p-1">{{contacts[currentContact].name}}</span>
                             <span
                                 class="p-1">{{contacts[currentContact].messages[contacts[currentContact].messages.length
-                                - 1].date}}</span>
+                                - 1].date}}
+                            </span>
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
@@ -105,8 +108,9 @@
                             class="d-flex">
                             <div :class="mes.status == 'sent' ? 'sent' : 'received'" class="sms text-break">
                                 {{mes.message}}
-                                <span @click="showOptions(index)"><i
-                                        class="info_messages fa-solid fa-chevron-down"></i></span>
+                                <span @click="showOptions(index)">
+                                    <i class="info_messages fa-solid fa-chevron-down"></i>
+                                </span>
 
                                 <div v-if="classVisible && index == currentMessage"
                                     class="messageInfo d-flex flex-column">
@@ -134,6 +138,8 @@
 
 
     </div>
+
+    <script src="./js/luxon.js"></script>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="./js/app.js"></script>
 

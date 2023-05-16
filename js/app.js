@@ -1,3 +1,4 @@
+var DateTime = luxon.DateTime;
 const { createApp } = Vue;
 
 createApp({
@@ -180,15 +181,29 @@ createApp({
     };
   },
   methods: {
-    changeContact(index, contact) {
+    changeContact(index) {
       this.currentContact = index;
       // lastMessage = contact.messages[contact.messages.length - 1];
       // console.log(lastMessage);
     },
 
+    // getlastMessage() {
+    //   let messaggio = this.contacts[currentContact].messages;
+    //   this.lastMessage =
+    //     messaggio[contacts[currentContact].messages.length - 1];
+    //   console.log(lastMessage);
+    // },
+
+    getLastMessage(contact) {
+      // if (condition) {
+
+      // }
+      contact.messages[contact.messages.length - 1].message;
+    },
+
     addMessage() {
       const data = {
-        date: "07/03/1988 00:00:42",
+        date: DateTime.now().toFormat("HH:mm"),
         message: this.newMessage,
         status: "sent",
       };
@@ -199,7 +214,7 @@ createApp({
 
     botMessage() {
       const data = {
-        date: "10/01/2020 16:15:22",
+        date: DateTime.now().toFormat("HH:mm"),
         message: "Bellaaa!",
         status: "received",
       };
