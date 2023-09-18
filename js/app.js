@@ -208,6 +208,12 @@ createApp({
         status: "sent",
       };
       this.contacts[this.currentContact].messages.push(data);
+      this.$nextTick(() => {
+        const messagesContainer = this.$refs.scrollContainer;
+        if (messagesContainer) {
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+      });
       this.newMessage = "";
       setTimeout(this.botMessage, 1000);
     },
@@ -219,6 +225,12 @@ createApp({
         status: "received",
       };
       this.contacts[this.currentContact].messages.push(data);
+      this.$nextTick(() => {
+        const messagesContainer = this.$refs.scrollContainer;
+        if (messagesContainer) {
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+      });
     },
 
     filterName() {
