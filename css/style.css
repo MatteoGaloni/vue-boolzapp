@@ -87,7 +87,6 @@ i {
 }
 
 #chat-container {
-    min-height: 400px;
     background-image: url(../img/mine.jpg);
     padding: 2rem;
     overflow-y: scroll
@@ -123,7 +122,8 @@ i {
     position: absolute;
     padding: 1rem;
     z-index: 1;
-    right: 10%;
+    right: 15%;
+    top: 40%;
     width: 150px;
     border-radius: 2px;
 }

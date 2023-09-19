@@ -24,7 +24,7 @@
             <div class="img-container p-1">
               <img class="rounded-img" :src="user.avatar" alt="user" />
             </div>
-            <span class="p-1">{{user.name}}</span>
+            <span class="p-2">{{user.name}}</span>
           </div>
           <div class="d-flex align-items-center">
             <span class="p-2"><i class="fa-regular fa-circle" style="color: #878787"></i></span>
@@ -33,12 +33,12 @@
           </div>
         </div>
         <!-- ****************Second Row*********************** -->
-        <div id="second-row" class="d-flex justify-content-between p-2">
+        <div id="second-row" class="p-2">
           <div class="d-flex align-items-center">
             <div id="rounded-icon" class=" p-1">
               <span><i id="bell" class="fa-solid fa-bell-slash"></i></span>
             </div>
-            <div class="d-flex flex-column">
+            <div class="ms-3 d-flex flex-column">
               <span class="p-1">Ricevi notifiche di nuovi messaggi</span>
               <span class="p-1">Attiva notifiche desktop</span>
             </div>
@@ -65,8 +65,7 @@
                 </div>
               </div>
               <div>
-                <!-- <span class="small grey">{{contact.messages[contact.messages.length -1].date}}</span> -->
-                <span class="small grey">{{formatHour(contact.messages[contact.messages.length -1].date)}}</span>
+                <span class="small grey">{{formatDay(contact.messages[contact.messages.length -1].date)}}</span>
               </div>
             </div>
           </div>
@@ -76,15 +75,15 @@
       <!-- ***********Right Container************************* -->
       <div id="right-wrapper" class="d-flex flex-column">
         <!-- ****************First Row*********************** -->
-        <h1></h1>
         <div id="first-row-right" class="d-flex justify-content-between p-2">
           <div class="d-flex align-items-center">
             <div class="img-container p-1">
               <img class="rounded-img" :src="contacts[currentContact].avatar" alt="user" />
             </div>
             <div class="d-flex flex-column">
-              <span class="p-1">{{contacts[currentContact].name}}</span>
-              <span class="p-1">{{contacts[currentContact].messages[contacts[currentContact].messages.length - 1].date}}
+              <span class="px-2">{{contacts[currentContact].name}}</span>
+              <span class="px-2">{{contacts[currentContact].messages[contacts[currentContact].messages.length -
+                1].date}}
               </span>
             </div>
           </div>
