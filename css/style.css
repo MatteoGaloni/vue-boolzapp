@@ -7,8 +7,7 @@
 
 body {
     font-family: sans-serif;
-    background: linear-gradient(0deg, rgba(218, 219, 212, 1) 80%, rgba(0, 150, 136, 1) 80%);
-    height: 100vh;
+    background: rgba(0, 150, 136, 1);
 }
 
 /* ****************************ROOT COLOR************** */
@@ -26,7 +25,8 @@ i {
 
 /* ***********MAIN CONTAINER******************** */
 .container {
-    height: 650px;
+    height: 90vh;
+    margin-top: 1.5rem;
     background-color: var(--main-color);
 }
 
@@ -39,8 +39,8 @@ i {
 
 #rounded-icon {
     background-color: white;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,7 +100,7 @@ i {
 }
 
 .sms {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     margin: 1rem 0;
     border-radius: 7px;
     position: relative;

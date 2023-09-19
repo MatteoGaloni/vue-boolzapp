@@ -11,8 +11,8 @@ createApp({
       searchName: "",
       classVisible: false,
       user: {
-        name: "Sofia",
-        avatar: "./img/avatar_io.jpg",
+        name: "Matteo",
+        avatar: "./img/img-cv-mat.jpg",
       },
 
       contacts: [
@@ -183,27 +183,21 @@ createApp({
   methods: {
     changeContact(index) {
       this.currentContact = index;
-      // lastMessage = contact.messages[contact.messages.length - 1];
-      // console.log(lastMessage);
     },
 
-    // getlastMessage() {
-    //   let messaggio = this.contacts[currentContact].messages;
-    //   this.lastMessage =
-    //     messaggio[contacts[currentContact].messages.length - 1];
-    //   console.log(lastMessage);
-    // },
+    formatHour(date) {
+      let formatDate = DateTime.fromFormat(date, "dd/MM/yyyy HH:mm:ss").toFormat('HH:mm')
+      return formatDate;
+    },
+
 
     getLastMessage(contact) {
-      // if (condition) {
-
-      // }
-      contact.messages[contact.messages.length - 1].message;
+      return (contact.messages[contact.messages.length - 1].message)
     },
 
     addMessage() {
       const data = {
-        date: DateTime.now().toFormat("HH:mm"),
+        date: DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss"),
         message: this.newMessage,
         status: "sent",
       };
@@ -220,7 +214,7 @@ createApp({
 
     botMessage() {
       const data = {
-        date: DateTime.now().toFormat("HH:mm"),
+        date: DateTime.now().toFormat("dd/MM/yyyy HH:mm:ss"),
         message: "Bellaaa!",
         status: "received",
       };
@@ -248,13 +242,6 @@ createApp({
       });
     },
 
-    // returnLast(contact) {
-    //   // array.forEach(element => {
-    //   // });
-    //   // this.contacts.messages[].message
-    //   this.lastMessage = contact.messages.length - 1;
-    //   return this.lastMessage;
-    // },
     showOptions(index) {
       this.currentMessage = index;
       this.classVisible = !this.classVisible;

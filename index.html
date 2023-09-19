@@ -1,197 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Whatsapp</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
 
-  <body>
-    <div class="p-3" id="app">
-      <!-- ***********Create Main Container************************* -->
-      <div class="container d-flex">
-        <!-- ***********Left Container************************* -->
-        <div id="left-wrapper">
-          <!-- ****************First Row*********************** -->
-          <div id="first-row" class="d-flex justify-content-between p-2">
-            <div class="d-flex align-items-center">
-              <div class="img-container p-1">
-                <img class="rounded-img" :src="user.avatar" alt="user" />
-              </div>
-              <span class="p-1">{{user.name}}</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whatsapp</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <!-- ***********Create Main Container************************* -->
+    <div class="container d-flex">
+      <!-- ***********Left Container************************* -->
+      <div id="left-wrapper">
+        <!-- ****************First Row*********************** -->
+        <div id="first-row" class="d-flex justify-content-between p-2">
+          <div class="d-flex align-items-center">
+            <div class="img-container p-1">
+              <img class="rounded-img" :src="user.avatar" alt="user" />
             </div>
-            <div class="d-flex align-items-center">
-              <span class="p-2"
-                ><i class="fa-regular fa-circle" style="color: #878787"></i
-              ></span>
-              <span class="p-2"><i class="fa-solid fa-message"></i></span>
-              <span class="p-2"
-                ><i class="fa-solid fa-ellipsis-vertical"></i
-              ></span>
+            <span class="p-1">{{user.name}}</span>
+          </div>
+          <div class="d-flex align-items-center">
+            <span class="p-2"><i class="fa-regular fa-circle" style="color: #878787"></i></span>
+            <span class="p-2"><i class="fa-solid fa-message"></i></span>
+            <span class="p-2"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+          </div>
+        </div>
+        <!-- ****************Second Row*********************** -->
+        <div id="second-row" class="d-flex justify-content-between p-2">
+          <div class="d-flex align-items-center">
+            <div id="rounded-icon" class=" p-1">
+              <span><i id="bell" class="fa-solid fa-bell-slash"></i></span>
             </div>
-          </div>
-          <!-- ****************Second Row*********************** -->
-          <div id="second-row" class="d-flex justify-content-between p-2">
-            <div class="d-flex align-items-center">
-              <div id="rounded-icon" class="p-1">
-                <span><i id="bell" class="fa-solid fa-bell-slash"></i></span>
-              </div>
-              <div class="d-flex flex-column">
-                <span class="p-1">Ricevi notifiche di nuovi messaggi</span>
-                <span class="p-1">Attiva notifiche desktop</span>
-              </div>
-            </div>
-          </div>
-          <!-- **************Third Row*********************** -->
-          <div class="input-group p-2">
-            <span class="input-group-text" id="basic-addon1"
-              ><i class="fa-solid fa-magnifying-glass"></i
-            ></span>
-            <input
-              v-model="searchName"
-              @keyup="filterName()"
-              type="text"
-              class="form-control"
-              placeholder="Cerca o inizia una nuova chat"
-              aria-label="Username"
-              aria-describedby="basic-addon1"
-            />
-          </div>
-          <!-- **************Messages Rows*********************** -->
-          <div id="users-container" class="flex-grow-1 p-2">
-            <!-- **************left CHAT row*********************** -->
-            <div
-              @click="changeContact(index)"
-              v-for="(contact, index) in contacts"
-              id="chat"
-              class=""
-            >
-              <div
-                v-if="contact.visible"
-                class="d-flex justify-content-between"
-              >
-                <div class="d-flex">
-                  <div class="img-container p-1">
-                    <img class="rounded-img" :src="contact.avatar" alt="user" />
-                  </div>
-                  <div class="d-flex flex-column">
-                    <span class="p-1 strong">{{contact.name}}</span>
-                    <span class="p-1 small grey"
-                      >{{getLastMessage(contact)}}</span
-                    >
-                  </div>
-                </div>
-                <div>
-                  <span class="small grey"
-                    >{{contact.messages[contact.messages.length -
-                    1].date}}</span
-                  >
-                </div>
-              </div>
+            <div class="d-flex flex-column">
+              <span class="p-1">Ricevi notifiche di nuovi messaggi</span>
+              <span class="p-1">Attiva notifiche desktop</span>
             </div>
           </div>
         </div>
-
-        <!-- ***********Right Container************************* -->
-        <div id="right-wrapper" class="d-flex flex-column">
-          <!-- ****************First Row*********************** -->
-          <h1></h1>
-          <div id="first-row-right" class="d-flex justify-content-between p-2">
-            <div class="d-flex align-items-center">
-              <div class="img-container p-1">
-                <img
-                  class="rounded-img"
-                  :src="contacts[currentContact].avatar"
-                  alt="user"
-                />
-              </div>
-              <div class="d-flex flex-column">
-                <span class="p-1">{{contacts[currentContact].name}}</span>
-                <span class="p-1"
-                  >{{contacts[currentContact].messages[contacts[currentContact].messages.length
-                  - 1].date}}
-                </span>
-              </div>
-            </div>
-            <div class="d-flex align-items-center">
-              <span class="p-2"
-                ><i class="fa-solid fa-magnifying-glass"></i
-              ></span>
-              <span class="p-2"><i class="fa-solid fa-paperclip"></i></span>
-              <span class="p-2"
-                ><i class="fa-solid fa-ellipsis-vertical"></i
-              ></span>
-            </div>
-          </div>
-          <!-- ****************Chat MEssagges Container*********************** -->
-          <div ref="scrollContainer" id="chat-container" class="flex-grow-1">
-            <div id="messages-container">
-              <div
-                id="message-wrapper"
-                v-for="(mes, index) in contacts[currentContact].messages"
-                :class="mes.status == 'sent' ? 'justify-content-end' : 'justify-content-start' "
-                class="d-flex"
-              >
-                <div
-                  :class="mes.status == 'sent' ? 'sent' : 'received'"
-                  class="sms text-break"
-                >
-                  {{mes.message}}
-                  <span @click="showOptions(index)">
-                    <i class="info_messages fa-solid fa-chevron-down"></i>
-                  </span>
-
-                  <div
-                    v-if="classVisible && index == currentMessage"
-                    class="messageInfo d-flex flex-column"
-                  >
-                    <span class="info_messages">Message Info</span>
-                    <span class="info_messages" @click="deleteMessage(index)"
-                      >Delete Message</span
-                    >
-                  </div>
-                  <span>{{mes.date}}</span>
+        <!-- **************Third Row*********************** -->
+        <div class="input-group p-2">
+          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+          <input v-model="searchName" @keyup="filterName()" type="text" class="form-control"
+            placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1" />
+        </div>
+        <!-- **************Messages Rows*********************** -->
+        <div id="users-container" class="flex-grow-1 p-2">
+          <!-- **************left CHAT row*********************** -->
+          <div @click="changeContact(index)" v-for="(contact, index) in contacts" id="chat" class="">
+            <div v-if="contact.visible" class="d-flex justify-content-between">
+              <div class="d-flex">
+                <div class="img-container p-1">
+                  <img class="rounded-img" :src="contact.avatar" alt="user" />
+                </div>
+                <div class="d-flex flex-column">
+                  <span class="p-1 strong">{{contact.name}}</span>
+                  <span class="p-1 small grey">{{getLastMessage(contact)}}</span>
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- ****************Chat Bottom bar *********************** -->
-          <div class="d-flex justify-content-between align-items-center p-2">
-            <div class="p-2">
-              <span><i class="fa-regular fa-face-smile"></i></span>
-            </div>
-            <input
-              id="input"
-              v-model="newMessage"
-              @keyup.enter="addMessage()"
-              type="text"
-              class="form-control"
-              placeholder="Scrivi un messaggio"
-              aria-label="Username"
-              aria-describedby="basic-addon1"
-            />
-            <div class="p-2">
-              <span><i class="fa-solid fa-microphone"></i></span>
+              <div>
+                <!-- <span class="small grey">{{contact.messages[contact.messages.length -1].date}}</span> -->
+                <span class="small grey">{{formatHour(contact.messages[contact.messages.length -1].date)}}</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <script src="./js/luxon.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/app.js"></script>
-  </body>
+      <!-- ***********Right Container************************* -->
+      <div id="right-wrapper" class="d-flex flex-column">
+        <!-- ****************First Row*********************** -->
+        <h1></h1>
+        <div id="first-row-right" class="d-flex justify-content-between p-2">
+          <div class="d-flex align-items-center">
+            <div class="img-container p-1">
+              <img class="rounded-img" :src="contacts[currentContact].avatar" alt="user" />
+            </div>
+            <div class="d-flex flex-column">
+              <span class="p-1">{{contacts[currentContact].name}}</span>
+              <span class="p-1">{{contacts[currentContact].messages[contacts[currentContact].messages.length - 1].date}}
+              </span>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <span class="p-2"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <span class="p-2"><i class="fa-solid fa-paperclip"></i></span>
+            <span class="p-2"><i class="fa-solid fa-ellipsis-vertical"></i></span>
+          </div>
+        </div>
+        <!-- ****************Chat MEssagges Container*********************** -->
+        <div ref="scrollContainer" id="chat-container" class="flex-grow-1">
+          <div id="messages-container">
+            <div id="message-wrapper" v-for="(mes, index) in contacts[currentContact].messages"
+              :class="mes.status == 'sent' ? 'justify-content-end' : 'justify-content-start' " class="d-flex">
+              <div :class="mes.status == 'sent' ? 'sent' : 'received'" class="sms text-break d-flex">
+                <span>{{mes.message}}</span>
+                <div class="d-flex flex-column">
+                  <span class="text-end" @click="showOptions(index)">
+                    <i class="info_messages fa-solid fa-chevron-down"></i>
+                  </span>
+                  <small>{{formatHour(mes.date)}}</small>
+                </div>
+
+                <div v-if="classVisible && index == currentMessage" class="messageInfo d-flex flex-column">
+                  <span class="info_messages">Message Info</span>
+                  <span class="info_messages" @click="deleteMessage(index)">Delete Message</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ****************Chat Bottom bar *********************** -->
+        <div class="d-flex justify-content-between align-items-center p-2">
+          <div class="p-2">
+            <span><i class="fa-regular fa-face-smile"></i></span>
+          </div>
+          <input id="input" v-model="newMessage" @keyup.enter="addMessage()" type="text" class="form-control"
+            placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1" />
+          <div class="p-2">
+            <span><i class="fa-solid fa-microphone"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/luxon.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+
 </html>
