@@ -7,7 +7,13 @@
 
 body {
     font-family: sans-serif;
-    background: rgba(0, 150, 136, 1);
+    background: linear-gradient(rgba(0, 150, 136, 1) 0px, rgba(0, 150, 136, 1) 180px, #dcdedd 180px, #dcdedd);
+    height: 100vh;
+}
+
+#app {
+    height: 100%;
+    padding: 1rem 0;
 }
 
 /* ****************************ROOT COLOR************** */
@@ -23,11 +29,11 @@ i {
     color: grey;
 }
 
+
 /* ***********MAIN CONTAINER******************** */
 .container {
-    height: 90vh;
-    margin-top: 1.5rem;
     background-color: var(--main-color);
+    height: 100%;
 }
 
 /* ******************************* */
